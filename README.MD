@@ -7,7 +7,7 @@ I tried to explain why Go was created, what is it good for and how popular is it
 ## Contents
 
 - [Simple hello world project](hello) that shows basic features
-- [CLI and API program that gets price of BTC/USDT concurrently from the most popular exchanges and counts average](tickers)
+- [CLI and API program that gets price of BTC/USDT concurrently from the most popular exchanges and computes average](tickers)
 - [slides for my talk](practical_intro_to_go.pdf)
   - Links from the slides, in case you can't open in from the github pdf viewer:
     - [Stackoverflow Developer Survey 2020, programming language salaries](https://insights.stackoverflow.com/survey/2020#work-salary-and-experience-by-language)
