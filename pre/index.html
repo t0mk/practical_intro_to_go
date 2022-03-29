@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Practical Intro to Go</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown>
+				<textarea data-template>
+
+
+## Practical intro to Golang
+
+Tomáš Karásek
+
+Coding Sauna 28.3.2022 @TribeTampere
+
+---
+
+## Design Goals
+- Go combines the development speed of working in a dynamic language like Python with the performance and safety of a compiled language like C or C++
+- Developed in Google to address the needs of Internet services (fast change, dependencies, concurrency)
+- Simple to learn and use (familiar syntax, garbage collection, static linking, light OOP, easy tooling)
+
+---
+
+## Technical Characteristics
+
+- (open `/hello` in vscode)
+- Compiled (Code -> Executable binary for target platform)
+- Golang code is linked statically
+- Compiled binaries have little dependencies
+- Pointers, garbage-collected
+- Very low-level, but has concurency and `map` in core (unlike C,C++ and Java)
+
+---
+
+## Popularity
+
+- Well paid ([2020](https://insights.stackoverflow.com/survey/2020#work-salary-and-experience-by-language), [2021](https://insights.stackoverflow.com/survey/2021#section-top-paying-technologies-top-paying-technologies)), loved ([2020](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved), [2021](https://insights.stackoverflow.com/survey/2021#most-loved-dreaded-and-wanted-language-love-dread)), but [still not there](https://octoverse.github.com/#top-languages-over-the-years)
+- Supported in [Github Copilot](https://copilot.github.com/), in [Google Cloud Functions](https://cloud.google.com/functions/docs/create-deploy-go)
+
+---
+
+## Tooling
+- most come as subcommands in the same binary as the compiler
+- go build - compiler
+- go mod - dependency management
+- go fmt - formatter  (show in `/hello/`)
+- go test - testing  (show in `/hello/`)
+- go doc - generates HTML documentation
+
+
+---
+
+## Coding example `/tickers/`
+
+- show [BTC-USD order book on Coinbase](https://pro.coinbase.com/trade/BTC-USD)
+- show API get of BTC-USD from Coinbase
+- getting JSON from API, struct, tags, json.Unmarshal
+- CoinbaseGetter BTC-USD
+- print prices from more exchange 
+- print prices from more exchange concurrently
+- compute average concurrently
+- compare times for sync and async
+
+---
+
+## Written in Go
+
+Usually sysadmin, "DevOps" tools
+
+- Kubernetes, Docker
+- Prometheus, Influxdb
+- Terraform, any software from HashiCorp
+
+---
+
+## vs Java, C++, Python
+
+- no classes, no inheritance, but struct can be composed, and can have "methods"
+- Java: no VM, map, concurrency out of the box
+- C++: garbage col, static linking, no generics until recently
+- Python: static typing, compiled, concurrency, faster
+
+  </textarea>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
